@@ -22,7 +22,7 @@ $(document).ready(function (e) {
             $(".chat-content-item.manager p").typed({
                 strings: [e.managerDialog[2].text],
                 showCursor: !1,
-                typeSpeed: 1,
+                typeSpeed: 25,
                 callback: function () {
                     setTimeout(function () {
                         var n, o, r;
@@ -76,7 +76,7 @@ $(document).ready(function (e) {
                                     $(".chat-content-item.manager p").typed({
                                         strings: [h],
                                         showCursor: !1,
-                                        typeSpeed: 1,
+                                        typeSpeed: 25,
                                         callback: function () {
                                             var t = [{ text: e.Replace(e.socNumber[0].text, p) }];
                                             (l = $.merge(e.managerVariants[a][0][0], t)),
@@ -170,6 +170,7 @@ $(document).ready(function (e) {
                                 "ความสัมพันธ์ ความรัก และสุขภาพของคุณจะดีขึ้นเรื่อยๆ แต่นั่นขึ้นอยู่กับว่าคุณเชื่อผมหรือไม่"
                         },
                         { text: "⚠️ หากคุณลังเล... โอกาสนี้อาจหลุดลอยไปจากคุณตลอดกาล คุณคือผู้กำหนดชะตากรรม อย่าปล่อยให้ความกลัวหยุดคุณไม่ให้พาชีวิตของคุณไปสู่ความรุ่งโรจน์" },
+                        {text:"ช่วงเวลานี้เป็นโอกาสที่ยอดเยี่ยมในการเปลี่ยนแปลงและพัฒนา โชคของคุณจะดีขึ้นอย่างรวดเร็ว นำมาซึ่งสิ่งที่ยอดเยี่ยมในงานและความรัก หากคุณสามารถกำจัดพลังงานลบที่ยับยั้งคุณได้"},
                         { text: "คำแนะนำที่สำคัญสำหรับผู้ที่เกิดปีนักษัตร {zodie} ในปี 2568" },
                         { text: "ถึงเวลาที่คุณต้องมีเครื่องรางคุ้มครองที่ทรงพลังที่สุด เพื่อดึงดูดเงินทองและโชคลาภสำหรับราศีของคุณในปี 2568" },
                         { text: "ถ้าคุณพลาดเครื่องรางเหล่านี้ ชีวิตของคุณจะยังเหมือนเดิม โชคลาภของคุณจะติดขัดตลอดไป" },
@@ -271,6 +272,7 @@ $(document).ready(function (e) {
                                 "ความสัมพันธ์ ความรัก และสุขภาพของคุณจะดีขึ้นเรื่อยๆ แต่นั่นขึ้นอยู่กับว่าคุณเชื่อผมหรือไม่"
                         },
                         { text: "⚠️ หากคุณลังเล... โอกาสนี้อาจหลุดลอยไปจากคุณตลอดกาล คุณคือผู้กำหนดชะตากรรม อย่าปล่อยให้ความกลัวหยุดคุณไม่ให้พาชีวิตของคุณไปสู่ความรุ่งโรจน์" },
+                        {text:"ช่วงเวลานี้เป็นโอกาสที่ยอดเยี่ยมในการเปลี่ยนแปลงและพัฒนา โชคของคุณจะดีขึ้นอย่างรวดเร็ว นำมาซึ่งสิ่งที่ยอดเยี่ยมในงานและความรัก หากคุณสามารถกำจัดพลังงานลบที่ยับยั้งคุณได้"},
                         { text: "คำแนะนำที่สำคัญสำหรับผู้ที่เกิดปีนักษัตร {zodie} ในปี 2568" },
                         { text: "ถึงเวลาที่คุณต้องมีเครื่องรางคุ้มครองที่ทรงพลังที่สุด เพื่อดึงดูดเงินทองและโชคลาภสำหรับราศีของคุณในปี 2568" },
                         { text: "ถ้าคุณพลาดเครื่องรางเหล่านี้ ชีวิตของคุณจะยังเหมือนเดิม โชคลาภของคุณจะติดขัดตลอดไป" },
@@ -442,7 +444,7 @@ $(document).ready(function (e) {
                 r = 1,
                 c = {
                     showCursor: !1,
-                    typeSpeed: 1,
+                    typeSpeed: 25,
                 };
             for (o = a.length; i < o + 1; i++)
                 (c.onStringTyped = function () {
@@ -460,7 +462,7 @@ $(document).ready(function (e) {
                 $(".chat-content-item.manager p").typed({
                     strings: [e.managerDialog[0].text],
                     showCursor: !1,
-                    typeSpeed: 1,
+                    typeSpeed: 25,
                     callback: function () {
                         2568
                         setTimeout(function () {
@@ -469,7 +471,7 @@ $(document).ready(function (e) {
                                 $(".chat-content-item.manager p").typed({
                                     strings: [e.managerDialog[1].text],
                                     showCursor: !1,
-                                    typeSpeed: 1,
+                                    typeSpeed: 25,
                                     callback: function () {
                                         setTimeout(function () {
                                             var t;
