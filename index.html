@@ -13,6 +13,79 @@
 
     <link rel="apple-touch-icon" sizes="180x180" href="krit-1.png">
 
+    <style>
+        #avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        #avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .loading-section {
+            margin: 15px 0;
+        }
+
+        .loading-item {
+            margin-bottom: 15px;
+            width: 250px;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+            border-radius: 8px;
+            color: white;
+        }
+
+        .loading-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+
+        .loading-bar-container {
+            width: 100%;
+            height: 20px;
+            background: #333;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .loading-bar {
+            height: 100%;
+            width: 0%;
+            border-radius: 10px;
+            transition: width 2s ease-out;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 5px;
+            font-size: 12px;
+            color: white;
+        }
+
+        .money-bar {
+            background: linear-gradient(90deg, #2e7d32, #4CAF50);
+        }
+
+        .health-bar {
+            background: linear-gradient(90deg, #1565C0, #2196F3);
+        }
+
+        .career-bar {
+            background: linear-gradient(90deg, #FF8F00, #FFC107);
+        }
+
+        .love-bar {
+            background: linear-gradient(90deg, #C2185B, #E91E63);
+        }
+    </style>
+
 </head>
 
 <body>
@@ -27,7 +100,7 @@
                         <div class="chat-header-container down">
                             <div class="chat-header-container-wrapper">
                                 <div class="chat-header-container-image-left">
-                                    <div class="chat-header-container-image">
+                                    <div id="avatar" class="chat-header-container-image">
                                         <img src="krit-1.png" alt="">
                                     </div>
                                     <div class="chat-header-container-image">
@@ -43,7 +116,7 @@
 
 
                     <div class="chat-content"
-                        style="background-color: gainsboro;background-image: url(img/background.jpg);background-size: cover;height: 100%;">
+                        style="background-color: gainsboro;background-image: url(img/background.jpg);background-size: cover;height: 100%; background-position: -100px;">
                         <div class="chat-content-container">
                             <div class="chat-content-list">
                             </div>
@@ -89,6 +162,55 @@
             $('.new_price_val').text(name_city);
             $('.new_price_cur').text($('#new_price_cur').text());
         }, 300)
+    </script>
+    <script>
+        function animateLoadingBars() {
+            const loadingBars = document.querySelectorAll('.loading-bar');
+
+            loadingBars.forEach(bar => {
+                const target = parseInt(bar.getAttribute('data-target'));
+                const percentElement = bar.closest('.loading-item').querySelector('.loading-percent');
+
+                // Reset trạng thái ban đầu
+                bar.style.width = '0%';
+                bar.textContent = '0%';
+                percentElement.textContent = '0%';
+
+                // Bắt đầu animation
+                setTimeout(() => {
+                    bar.style.width = target + '%';
+                    bar.textContent = target + '%';
+                    percentElement.textContent = target + '%';
+                }, 100);
+            });
+        }
+
+        // Sử dụng MutationObserver để phát hiện khi nội dung mới được thêm vào
+        const observer = new MutationObserver(function (mutations) {
+            mutations.forEach(function (mutation) {
+                if (mutation.addedNodes.length) {
+                    // Kiểm tra xem có loading bars mới được thêm không
+                    const newLoadingBars = document.querySelectorAll('.loading-bar:not([data-animated])');
+                    if (newLoadingBars.length > 0) {
+                        newLoadingBars.forEach(bar => {
+                            bar.setAttribute('data-animated', 'true');
+                        });
+                        setTimeout(animateLoadingBars, 500); // Delay một chút để đảm bảo DOM đã render
+                    }
+                }
+            });
+        });
+
+        // Bắt đầu quan sát toàn bộ document
+        observer.observe(document.body, {
+            childList: true,
+            subtree: true
+        });
+
+        // Gọi lần đầu khi trang tải xong
+        document.addEventListener('DOMContentLoaded', function () {
+            setTimeout(animateLoadingBars, 1000);
+        });
     </script>
 </body>
 
