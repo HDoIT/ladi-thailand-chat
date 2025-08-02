@@ -22,7 +22,7 @@ $(document).ready(function (e) {
             $(".chat-content-item.manager p").typed({
                 strings: [e.managerDialog[2].text],
                 showCursor: !1,
-                typeSpeed: 1,
+                typeSpeed: 25,
                 callback: function () {
                     setTimeout(function () {
                         var n, o, r;
@@ -76,7 +76,7 @@ $(document).ready(function (e) {
                                     $(".chat-content-item.manager p").typed({
                                         strings: [h],
                                         showCursor: !1,
-                                        typeSpeed: 1,
+                                        typeSpeed: 25,
                                         callback: function () {
                                             var t = [{ text: e.Replace(e.socNumber[0].text, p) }];
                                             (l = $.merge(e.managerVariants[a][0][0], t)),
@@ -346,7 +346,7 @@ $(document).ready(function (e) {
                 r = 1,
                 c = { 
                     showCursor: !1,
-                    typeSpeed: 1,
+                    typeSpeed: 25,
                 };
             for (o = a.length; i < o + 1; i++)
                 (c.onStringTyped = function () {
@@ -364,7 +364,7 @@ $(document).ready(function (e) {
                 $(".chat-content-item.manager p").typed({
                     strings: [e.managerDialog[0].text],
                     showCursor: !1,
-                    typeSpeed: 1,
+                    typeSpeed: 25,
                     callback: function () {2568
                         setTimeout(function () {
                             $(".chat-content-list").append(t("manager")),
@@ -372,7 +372,7 @@ $(document).ready(function (e) {
                                 $(".chat-content-item.manager p").typed({
                                     strings: [e.managerDialog[1].text],
                                     showCursor: !1,
-                                    typeSpeed: 1,
+                                    typeSpeed: 25,
                                     callback: function () {
                                         setTimeout(function () {
                                             var t;
