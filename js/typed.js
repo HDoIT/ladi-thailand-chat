@@ -14,7 +14,7 @@
             !0 === this.showCursor && (this.cursor = t('<span class="typed-cursor">' + this.cursorChar + "</span>"), this.el.after(this.cursor)), this.init()
         }, typewrite: function (t, s) {
             if (!0 === this.stop) return !1;
-            var e = Math.round(200 * Math.random()) + this.typeSpeed, r = this;
+            var e =  this.typeSpeed, r = this;
             r.timeout = setTimeout(function () {
                 var e = 0, o = t.substr(s);
                 if ("^" === o.charAt(0)) {

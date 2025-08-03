@@ -121,8 +121,8 @@ $(document).ready(function (e) {
 <div class="loading-section">
   <div class="loading-item">
     <div class="loading-header">
-      <span>เงิน</span>
-      <span class="loading-percent">0%</span>
+      <span style="font-size: 25px;">เงิน</span>
+      <span class="loading-percent" style="font-size: 25px;">0%</span>
     </div>
     <div class="loading-bar-container">
       <div class="loading-bar money-bar" data-target="${Math.floor(Math.random() * 11) + 50}">0%</div>
@@ -132,8 +132,8 @@ $(document).ready(function (e) {
                             text: `
   <div class="loading-item">
     <div class="loading-header">
-      <span>สุขภาพ</span>
-      <span class="loading-percent">0%</span>
+      <span style="font-size: 25px;">สุขภาพ</span>
+      <span class="loading-percent" style="font-size: 25px;">0%</span>
     </div>
     <div class="loading-bar-container">
       <div class="loading-bar health-bar" data-target="${Math.floor(Math.random() * 26) + 60}">0%</div>
@@ -142,8 +142,8 @@ $(document).ready(function (e) {
                             text: `
   <div class="loading-item">
     <div class="loading-header">
-      <span>อาชีพ</span>
-      <span class="loading-percent">0%</span>
+      <span style="font-size: 25px;">อาชีพ</span>
+      <span class="loading-percent" style="font-size: 25px;">0%</span>
     </div>
     <div class="loading-bar-container">
       <div class="loading-bar career-bar" data-target="${Math.floor(Math.random() * 16) + 70}">0%</div>
@@ -153,8 +153,8 @@ $(document).ready(function (e) {
 
   <div class="loading-item">
     <div class="loading-header">
-      <span>ความรัก</span>
-      <span class="loading-percent">0%</span>
+      <span style="font-size: 25px;">ความรัก</span>
+      <span class="loading-percent" style="font-size: 25px;">0%</span>
     </div>
     <div class="loading-bar-container">
       <div class="loading-bar love-bar" data-target="${Math.floor(Math.random() * 16) + 60}">0%</div>
@@ -199,7 +199,7 @@ $(document).ready(function (e) {
                         { text: "ทำไมคุณถึงต้องมีเครื่องรางนี้?" },
                         { text: "เครื่องรางคุ้มครอง 3 ชิ้นนี้จะเปลี่ยนชีวิตของคุณอย่างสิ้นเชิงภายในหนึ่งเดือน คุณจะหลุดพ้นจากความยากจน เงินจะไหลเข้ากระเป๋าของคุณจากหลายแหล่งจนตลอดชีวิต" },
                         {
-                            text: "ผมพยายามช่วยทุกคนแก้ปัญหา และไม่เคยหาผลกำไรจากเรื่องนี้ นั่นคือเหตุผลที่ตั้งแต่วันนี้จนถึงวันที่" + (new Date().getDate() + 1) + ' ' + ((d = new Date()), (p = new Date(d.getTime() - 0)), (monthA = "มกราคม,กุมภาพันธ,มีนาคม,เมษายน,พฤษภาคม,มิถุนายน,กรกฎาคม,สิงหาคม,กันยายน,ตุลาคม,พฤศจิกายน,ธันวาคม".split(",")), monthA[p.getMonth()]) + "สิงหาคม คุณจะได้รับส่วนลด 50% สำหรับเครื่องราง 3 ชิ้น เหลือเพียง 1290" + '</b> <b>' +
+                            text: "ผมพยายามช่วยทุกคนแก้ปัญหา และไม่เคยหาผลกำไรจากเรื่องนี้ นั่นคือเหตุผลที่ตั้งแต่วันนี้จนถึงวันที่ " + (new Date().getDate() + 1) + ' ' + ((d = new Date()), (p = new Date(d.getTime() - 0)), (monthA = "มกราคม,กุมภาพันธ,มีนาคม,เมษายน,พฤษภาคม,มิถุนายน,กรกฎาคม,สิงหาคม,กันยายน,ตุลาคม,พฤศจิกายน,ธันวาคม".split(",")), monthA[p.getMonth()]) + " สิงหาคม คุณจะได้รับส่วนลด 50% สำหรับเครื่องราง 3 ชิ้น เหลือเพียง 1290" + '</b> <b>' +
                                 '฿' + "บาท"
                         },
                         // {
@@ -301,7 +301,7 @@ $(document).ready(function (e) {
                         { text: "ทำไมคุณถึงต้องมีเครื่องรางนี้?" },
                         { text: "เครื่องรางคุ้มครอง 3 ชิ้นนี้จะเปลี่ยนชีวิตของคุณอย่างสิ้นเชิงภายในหนึ่งเดือน คุณจะหลุดพ้นจากความยากจน เงินจะไหลเข้ากระเป๋าของคุณจากหลายแหล่งจนตลอดชีวิต" },
                         {
-                            text: "ผมพยายามช่วยทุกคนแก้ปัญหา และไม่เคยหาผลกำไรจากเรื่องนี้ นั่นคือเหตุผลที่ตั้งแต่วันนี้จนถึงวันที่" + (new Date().getDate() + 1) + ' ' + ((d = new Date()), (p = new Date(d.getTime() - 0)), (monthA = "มกราคม,กุมภาพันธ,มีนาคม,เมษายน,พฤษภาคม,มิถุนายน,กรกฎาคม,สิงหาคม,กันยายน,ตุลาคม,พฤศจิกายน,ธันวาคม".split(",")), monthA[p.getMonth()]) + "สิงหาคม คุณจะได้รับส่วนลด 50% สำหรับเครื่องราง 3 ชิ้น เหลือเพียง 1290" + "</b> <b>" +
+                            text: "ผมพยายามช่วยทุกคนแก้ปัญหา และไม่เคยหาผลกำไรจากเรื่องนี้ นั่นคือเหตุผลที่ตั้งแต่วันนี้จนถึงวันที่ " + (new Date().getDate() + 1) + ' ' + ((d = new Date()), (p = new Date(d.getTime() - 0)), (monthA = "มกราคม,กุมภาพันธ,มีนาคม,เมษายน,พฤษภาคม,มิถุนายน,กรกฎาคม,สิงหาคม,กันยายน,ตุลาคม,พฤศจิกายน,ธันวาคม".split(",")), monthA[p.getMonth()]) + " สิงหาคม คุณจะได้รับส่วนลด 50% สำหรับเครื่องราง 3 ชิ้น เหลือเพียง 1290" + "</b> <b>" +
                                 '฿' + " บาท"
                         },
                         // {

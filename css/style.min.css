@@ -11255,7 +11255,7 @@ dialog + .backdrop {
   text-align: center;
 }
 .text-15 {
-  padding-bottom: 88px;
+  /* padding-bottom: 88px; */
 }
 @media (max-width: 373px) {
   .text-15 {
