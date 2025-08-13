@@ -120,7 +120,7 @@
                                         <img src="img/message-icon.png" alt="">
                                     </div>
                                     <div class="chat-header-container-image" style="color:white">
-                                        <span><b style="font-size: 30px;">เอ จักรพรรดิ </b></span>
+                                        <span><b style="font-size: 30px;">AE Emperor</b></span>
                                     </div>
                                 </div>
                             </div>
@@ -148,7 +148,7 @@
                         <input type="text" name="phone" placeholder="Phone" required="" class="form-control input-lg">
                     </div>
                     <input type="hidden" name="comments"> -->
-                    <input type="submit" value="เรียนรู้เพิ่มเติมเกี่ยวกับเครื่องราง" class="btn-primary">
+                    <input type="submit" value="Learn more about the three Amulets" class="btn-primary">
                 </div>
             </form>
         </div>
@@ -184,12 +184,11 @@
                 const target = parseInt(bar.getAttribute('data-target'));
                 const percentElement = bar.closest('.loading-item').querySelector('.loading-percent');
 
-                // Reset trạng thái ban đầu
+
                 bar.style.width = '0%';
                 bar.textContent = '0%';
                 percentElement.textContent = '0%';
 
-                // Bắt đầu animation
                 setTimeout(() => {
                     bar.style.width = target + '%';
                     bar.textContent = target + '%';
@@ -198,29 +197,27 @@
             });
         }
 
-        // Sử dụng MutationObserver để phát hiện khi nội dung mới được thêm vào
         const observer = new MutationObserver(function (mutations) {
             mutations.forEach(function (mutation) {
                 if (mutation.addedNodes.length) {
-                    // Kiểm tra xem có loading bars mới được thêm không
                     const newLoadingBars = document.querySelectorAll('.loading-bar:not([data-animated])');
                     if (newLoadingBars.length > 0) {
                         newLoadingBars.forEach(bar => {
                             bar.setAttribute('data-animated', 'true');
                         });
-                        setTimeout(animateLoadingBars, 500); // Delay một chút để đảm bảo DOM đã render
+                        setTimeout(animateLoadingBars, 500); 
                     }
                 }
             });
         });
 
-        // Bắt đầu quan sát toàn bộ document
+
         observer.observe(document.body, {
             childList: true,
             subtree: true
         });
 
-        // Gọi lần đầu khi trang tải xong
+
         document.addEventListener('DOMContentLoaded', function () {
             setTimeout(animateLoadingBars, 1000);
         });

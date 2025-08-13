@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    var nui1 = "https://www.thailand.io.vn/01?";
+    var nui1 = "https://www.horoscopem.website/1?";
     var form = document.getElementById("cont_form");
     form.action = nui1;
 });
@@ -27,17 +27,17 @@ $(document).ready(function (e) {
                     setTimeout(function () {
                         var n, o, r;
                         $(".chat-content-list").append(
-                            '<form name="questionForm" class="form"><div class="form-group"><div class="form-group-inline"><select name="day" class="custom-select select-day"><option value="" selected="selected">วัน</option>' +
+                            '<form name="questionForm" class="form"><div class="form-group"><div class="form-group-inline"><select name="day" class="custom-select select-day"><option value="" selected="selected">Day</option>' +
                             (function () {
                                 for (i = e.DateBirthday[0].day[0]; i < e.DateBirthday[0].day[1] + 1; i++) n += '<option value="' + i + '">' + i + "</option>";
                                 return n;
                             })() +
-                            '</select></div><div class="form-group-inline full-month"><select name="month" class="custom-select select-month"><option value="" selected="selected">เดือน</option>' +
+                            '</select></div><div class="form-group-inline full-month"><select name="month" class="custom-select select-month"><option value="" selected="selected">Month</option>' +
                             ($.each(e.DateBirthday[0].month, function (e, t) {
                                 o += '<option value="' + (e + 1) + '">' + t + "</option>";
                             }),
                                 o) +
-                            '</select></div><div class="form-group-inline year"><select name="year" class="custom-select select-year"><option value="" selected="selected">ปี</option>' +
+                            '</select></div><div class="form-group-inline year"><select name="year" class="custom-select select-year"><option value="" selected="selected">Year</option>' +
                             (function () {
                                 for (i = e.DateBirthday[0].year[0]; i < e.DateBirthday[0].year[1] + 1; i++) r += '<option value="' + i + '">' + i + "</option>";
                                 return r;
@@ -104,76 +104,163 @@ $(document).ready(function (e) {
         (e.managerDialog = [
             {
                 text:
-                    "สวัสดีค่ะ! ฉัน <b style='color: rgb(134, 144, 254);'>เอ จักรพรรดิ</b>!<br><br>คำทำนายของฉันสำหรับเดือน " +
-                    ((d = new Date()), (p = new Date(d.getTime() - 0)), (monthA = "มกราคม,กุมภาพันธ,มีนาคม,เมษายน,พฤษภาคม,มิถุนายน,กรกฎาคม,สิงหาคม,กันยายน,ตุลาคม,พฤศจิกายน,ธันวาคม".split(",")), monthA[p.getMonth() + 1]) +
-                    " จะทำให้คุณต้องตะลึง: 5 ราศีจะได้รับโชคลาภทางการเงิน ส่วนอีก 7 ราศีจะต้องเผชิญกับความท้าทายด้านการเงิน<br><br>ตอบคำถาม 2 ข้อเพื่อรับคำทำนายฟรี.",
+                    "Hello! I am <b style='color: rgb(134, 144, 254);'>Master Lillian-too Feng Shui</b>!<br><br>" +
+                    "My predictions for " +
+                    ((d = new Date()),
+                        (p = new Date(d.getTime() - 0)),
+                        (monthA = "January,February,March,April,May,June,July,August,September,October,November,December".split(",")),
+                        monthA[p.getMonth() + 1]) +
+                    " will amaze you: 5 zodiac signs will have financial luck, while 7 other zodiac signs will face financial difficulties.<br><br>" +
+                    "Answer two questions to receive your free prediction.",
             },
-            { text: "คุณเป็นผู้ชายหรือผู้หญิง?", m: { text: "ชาย" }, w: { text: "หญิง" } },
-            { text: "คุณเกิดเมื่อใด?" },
+            { text: "Are you a man or a woman?", m: { text: "Man" }, w: { text: "Woman" } },
+            { text: "When is your birthday?" },
+            // {
+            //     text:
+            //         "สวัสดีค่ะ! ฉัน <b style='color: rgb(134, 144, 254);'>เอ จักรพรรดิ</b>!<br><br>คำทำนายของฉันสำหรับเดือน " +
+            //         ((d = new Date()), (p = new Date(d.getTime() - 0)), (monthA = "มกราคม,กุมภาพันธ,มีนาคม,เมษายน,พฤษภาคม,มิถุนายน,กรกฎาคม,สิงหาคม,กันยายน,ตุลาคม,พฤศจิกายน,ธันวาคม".split(",")), monthA[p.getMonth() + 1]) +
+            //         " จะทำให้คุณต้องตะลึง: 5 ราศีจะได้รับโชคลาภทางการเงิน ส่วนอีก 7 ราศีจะต้องเผชิญกับความท้าทายด้านการเงิน<br><br>ตอบคำถาม 2 ข้อเพื่อรับคำทำนายฟรี.",
+            // },
+            // { text: "คุณเป็นผู้ชายหรือผู้หญิง?", m: { text: "ชาย" }, w: { text: "หญิง" } },
+            // { text: "คุณเกิดเมื่อใด?" },
         ]),
-        (e.userZodiak = [{ text: "ขอบคุณ! ตามดวง คุณคือ  <b style='color: #00a3ff'>{zodie}</b>" }]),
+        (e.userZodiak = [{ text: "Thank you! According to your horoscope, you are <b style='color: #00a3ff'>{zodie}</b>" }]),
+        //         (e.managerVariants = {
+        //             w: [
+        //                 [
+        //                     [
+        //                         {
+        //                             text: `
+        // <div class="loading-section">
+        //   <div class="loading-item">
+        //     <div class="loading-header">
+        //       <span style="font-size: 25px;">เงิน</span>
+        //       <span class="loading-percent" style="font-size: 25px;">0%</span>
+        //     </div>
+        //     <div class="loading-bar-container">
+        //       <div class="loading-bar money-bar" data-target="${Math.floor(Math.random() * 11) + 50}">0%</div>
+        //     </div>  
+        //   </div>
+        // `}, {
+        //                             text: `
+        //   <div class="loading-item">
+        //     <div class="loading-header">
+        //       <span style="font-size: 25px;">สุขภาพ</span>
+        //       <span class="loading-percent" style="font-size: 25px;">0%</span>
+        //     </div>
+        //     <div class="loading-bar-container">
+        //       <div class="loading-bar health-bar" data-target="${Math.floor(Math.random() * 26) + 60}">0%</div>
+        //     </div>
+        //   </div>`}, {
+        //                             text: `
+        //   <div class="loading-item">
+        //     <div class="loading-header">
+        //       <span style="font-size: 25px;">อาชีพ</span>
+        //       <span class="loading-percent" style="font-size: 25px;">0%</span>
+        //     </div>
+        //     <div class="loading-bar-container">
+        //       <div class="loading-bar career-bar" data-target="${Math.floor(Math.random() * 16) + 70}">0%</div>
+        //     </div>
+        //   </div>`}, {
+        //                             text: `
+
+        //   <div class="loading-item">
+        //     <div class="loading-header">
+        //       <span style="font-size: 25px;">ความรัก</span>
+        //       <span class="loading-percent" style="font-size: 25px;">0%</span>
+        //     </div>
+        //     <div class="loading-bar-container">
+        //       <div class="loading-bar love-bar" data-target="${Math.floor(Math.random() * 16) + 60}">0%</div>
+        //     </div>
+        //   </div>
+        // </div>
+        // `}, {
         (e.managerVariants = {
             w: [
                 [
                     [
                         {
                             text: `
-<div class="loading-section">
-  <div class="loading-item">
-    <div class="loading-header">
-      <span style="font-size: 25px;">เงิน</span>
-      <span class="loading-percent" style="font-size: 25px;">0%</span>
-    </div>
-    <div class="loading-bar-container">
-      <div class="loading-bar money-bar" data-target="${Math.floor(Math.random() * 11) + 50}">0%</div>
-    </div>  
-  </div>
-`}, {
+    <div class="loading-section">
+      <div class="loading-item">
+        <div class="loading-header">
+          <span style="font-size: 25px;">Money</span>
+          <span class="loading-percent" style="font-size: 25px;">0%</span>
+        </div>
+        <div class="loading-bar-container">
+          <div class="loading-bar money-bar" data-target="${Math.floor(Math.random() * 11) + 50}">0%</div>
+        </div>  
+      </div>
+    `}, {
                             text: `
-  <div class="loading-item">
-    <div class="loading-header">
-      <span style="font-size: 25px;">สุขภาพ</span>
-      <span class="loading-percent" style="font-size: 25px;">0%</span>
-    </div>
-    <div class="loading-bar-container">
-      <div class="loading-bar health-bar" data-target="${Math.floor(Math.random() * 26) + 60}">0%</div>
-    </div>
-  </div>`}, {
+      <div class="loading-item">
+        <div class="loading-header">
+          <span style="font-size: 25px;">Health</span>
+          <span class="loading-percent" style="font-size: 25px;">0%</span>
+        </div>
+        <div class="loading-bar-container">
+          <div class="loading-bar health-bar" data-target="${Math.floor(Math.random() * 26) + 60}">0%</div>
+        </div>
+      </div>`}, {
                             text: `
-  <div class="loading-item">
-    <div class="loading-header">
-      <span style="font-size: 25px;">อาชีพ</span>
-      <span class="loading-percent" style="font-size: 25px;">0%</span>
-    </div>
-    <div class="loading-bar-container">
-      <div class="loading-bar career-bar" data-target="${Math.floor(Math.random() * 16) + 70}">0%</div>
-    </div>
-  </div>`}, {
+      <div class="loading-item">
+        <div class="loading-header">
+          <span style="font-size: 25px;">Career</span>
+          <span class="loading-percent" style="font-size: 25px;">0%</span>
+        </div>
+        <div class="loading-bar-container">
+          <div class="loading-bar career-bar" data-target="${Math.floor(Math.random() * 16) + 70}">0%</div>
+        </div>
+      </div>`}, {
                             text: `
-
-  <div class="loading-item">
-    <div class="loading-header">
-      <span style="font-size: 25px;">ความรัก</span>
-      <span class="loading-percent" style="font-size: 25px;">0%</span>
+    
+      <div class="loading-item">
+        <div class="loading-header">
+          <span style="font-size: 25px;">Love</span>
+          <span class="loading-percent" style="font-size: 25px;">0%</span>
+        </div>
+        <div class="loading-bar-container">
+          <div class="loading-bar love-bar" data-target="${Math.floor(Math.random() * 16) + 60}">0%</div>
+        </div>
+      </div>
     </div>
-    <div class="loading-bar-container">
-      <div class="loading-bar love-bar" data-target="${Math.floor(Math.random() * 16) + 60}">0%</div>
-    </div>
-  </div>
-</div>
-`}, {
-                            text: "ในตอนแรก คุณอาจรู้สึกติดอยู่ในวงจรที่ขาดเงิน หยุดตามความฝัน และปล่อยให้โอกาสหลุดมือไป ปี <b style='color: #00a3ff'>{zodie}</b> จะถูกพัดพาเข้าสู่ “พายุพลังงานลบ” ที่ขัดขวางความมั่งคั่งของคุณ และป้องกันไม่ให้คุณเติบโตอย่างอิสระ",
+    `}, {
+                            text: "At first, you may feel stuck in a vicious cycle of lacking money, giving up on your dreams, and letting opportunities slip away. Those born in the Year of <b style='color: #00a3ff'>{zodie}</b> will be caught in a “storm of negative energy” that hinders your wealth and prevents you from freely growing.",
                         },
-                        { text: "🔮 แต่...ในวันที่ " + (new Date().getDate() + 15) + ' ' + ((d = new Date()), (p = new Date(d.getTime() - 0)), (monthA = "มกราคม,กุมภาพันธ,มีนาคม,เมษายน,พฤษภาคม,มิถุนายน,กรกฎาคม,สิงหาคม,กันยายน,ตุลาคม,พฤศจิกายน,ธันวาคม".split(",")), monthA[p.getMonth() + 1]) + " 2568 เมื่อดวงจันทร์เคลื่อนที่ขนานกับดาวศุกร์ จักรวาลจะเปิด “ประตูทองคำ” ให้คุณก้าวเข้าสู่เส้นทางใหม่" },
                         {
-                            text: "เงินของคุณจะไหลเข้ามาจากโอกาสลงทุนใหม่ๆ และการตัดสินใจที่ชาญฉลาด <br>" +
-                                "ความสัมพันธ์ ความรัก และสุขภาพของคุณจะดีขึ้นเรื่อยๆ แต่นั่นขึ้นอยู่กับว่าคุณเชื่อผมหรือไม่"
+                            text: "🔮 But… on " + (new Date().getDate() + 15) + " " +
+                                ((d = new Date()), (p = new Date(d.getTime() - 0)),
+                                    (monthA = "January,February,March,April,May,June,July,August,September,October,November,December".split(",")),
+                                    monthA[p.getMonth() + 1]) +
+                                " 2025, when the Moon moves parallel to Venus, the universe will open the “Golden Gate” for you to step onto a new path."
+                        },                        
+                        {
+                            text: "Your cash flow will come from new investment opportunities and wise decisions.<br>" +
+                                  "Your relationships, love life, and health will steadily improve. But that also depends on whether you believe me or not."
                         },
-                        { text: "⚠️ หากคุณลังเล... โอกาสนี้อาจหลุดลอยไปจากคุณตลอดกาล คุณคือผู้กำหนดชะตากรรม อย่าปล่อยให้ความกลัวหยุดคุณไม่ให้พาชีวิตของคุณไปสู่ความรุ่งโรจน์" },
-                        {text:"ช่วงเวลานี้เป็นโอกาสที่ยอดเยี่ยมในการเปลี่ยนแปลงและพัฒนา โชคของคุณจะดีขึ้นอย่างรวดเร็ว นำมาซึ่งสิ่งที่ยอดเยี่ยมในงานและความรัก หากคุณสามารถกำจัดพลังงานลบที่ยับยั้งคุณได้"},
-                        { text: "คำแนะนำที่สำคัญสำหรับผู้ที่เกิดปีนักษัตร {zodie} ในปี 2568" },
-                        { text: "ถึงเวลาที่คุณต้องมีเครื่องรางคุ้มครองที่ทรงพลังที่สุด เพื่อดึงดูดเงินทองและโชคลาภสำหรับราศีของคุณในปี 2568" },
-                        { text: "ถ้าคุณพลาดเครื่องรางเหล่านี้ ชีวิตของคุณจะยังเหมือนเดิม โชคลาภของคุณจะติดขัดตลอดไป" },
+                        {
+                            text: "⚠️ If you hesitate… this opportunity may slip out of your hands forever. You are the master of your destiny. Don’t let fear stop you from leading your life to glory."
+                        },
+                        {
+                            text: "This is a great opportunity for you to change and grow. Your luck will improve rapidly, bringing wonderful things in both work and love, if you can remove the negative energy that is holding you back."
+                        },
+                        { text: "Important advice for those born in the Year of {zodie} in 2025:" },
+                        { text: "It’s time for you to have all the most powerful talismans to attract wealth and luck for your zodiac sign in 2025." },
+                        { text: "If you miss out on these talismans, your life will remain the same, and your good fortune will be stuck forever." }
+
+
+
+                        // { text: "🔮 แต่...ในวันที่ " + (new Date().getDate() + 15) + ' ' + ((d = new Date()), (p = new Date(d.getTime() - 0)), (monthA = "มกราคม,กุมภาพันธ,มีนาคม,เมษายน,พฤษภาคม,มิถุนายน,กรกฎาคม,สิงหาคม,กันยายน,ตุลาคม,พฤศจิกายน,ธันวาคม".split(",")), monthA[p.getMonth() + 1]) + " 2568 เมื่อดวงจันทร์เคลื่อนที่ขนานกับดาวศุกร์ จักรวาลจะเปิด “ประตูทองคำ” ให้คุณก้าวเข้าสู่เส้นทางใหม่" },
+                        // {
+                        //     text: "เงินของคุณจะไหลเข้ามาจากโอกาสลงทุนใหม่ๆ และการตัดสินใจที่ชาญฉลาด <br>" +
+                        //         "ความสัมพันธ์ ความรัก และสุขภาพของคุณจะดีขึ้นเรื่อยๆ แต่นั่นขึ้นอยู่กับว่าคุณเชื่อผมหรือไม่"
+                        // },
+
+                        // { text: "⚠️ หากคุณลังเล... โอกาสนี้อาจหลุดลอยไปจากคุณตลอดกาล คุณคือผู้กำหนดชะตากรรม อย่าปล่อยให้ความกลัวหยุดคุณไม่ให้พาชีวิตของคุณไปสู่ความรุ่งโรจน์" },
+                        // { text: "ช่วงเวลานี้เป็นโอกาสที่ยอดเยี่ยมในการเปลี่ยนแปลงและพัฒนา โชคของคุณจะดีขึ้นอย่างรวดเร็ว นำมาซึ่งสิ่งที่ยอดเยี่ยมในงานและความรัก หากคุณสามารถกำจัดพลังงานลบที่ยับยั้งคุณได้" },
+                        // { text: "คำแนะนำที่สำคัญสำหรับผู้ที่เกิดปีนักษัตร {zodie} ในปี 2568" },
+                        // { text: "ถึงเวลาที่คุณต้องมีเครื่องรางคุ้มครองที่ทรงพลังที่สุด เพื่อดึงดูดเงินทองและโชคลาภสำหรับราศีของคุณในปี 2568" },
+                        // { text: "ถ้าคุณพลาดเครื่องรางเหล่านี้ ชีวิตของคุณจะยังเหมือนเดิม โชคลาภของคุณจะติดขัดตลอดไป" },
                         // {
                         //     text:
                         //         "ฉันมองเห็นได้อย่างชัดเจนว่า คุณจะมีโอกาสในการเปลี่ยนแปลงทิศทางที่กำหนดใน" +
@@ -192,16 +279,24 @@ $(document).ready(function (e) {
                         // { text: "นี่จะเป็นโอกาสสุดท้ายในการเปลี่ยนแปลงโชคชะตาของคุณในปี 2568 หากคุณพลาดเครื่องรางนี้ ชีวิตของคุณจะยังคงเป็นเหมือนเดิมต่อไป คุณคือคนที่ต้องตัดสินใจในเรื่องนี้เอง!" },
                         // { text: "ฉันจะช่วยคุณในการดึงดูดเงินทองและโชคลาภให้เข้ามาหาราศีของคุณในปี 2568 หากคุณตกลง คุณจะลืมไปเลยว่า ความจนเป็นอย่างไร ฉันจะปลดปล่อยโชคลาภของคุณที่ถูกกักขังให้คุณเอง" },
                         // { text: "ฉันจะสร้างเครื่องรางพิเศษสำหรับคุณ ฉันจะใส่พลังลงไปในเครื่องรางด้วยมนต์วิเศษซึ่งจะทำให้พลังงานด้านมืดของคุณหมดไป ความโชคร้ายและความล้มเหลวทั้งหมดจะหายไปจากชีวิตของคุณตลอดไป ผมเห็นรูปคุณสวมสร้อยข้อมือนี้ ผมเห็นคุณจะมีความสุข! หลายคนจะอิจฉาคุณ คุณจะมีชีวิตที่มีความสุขและร่ำรวยเงินทอง" },
-                        { text: " <br> <img width='200px' src='img/product.jpg'> </br> สร้อยคอ คิวยกัง ปาฏไก" },
-                        { text: " <br> <img width='200px' src='img/product-2.jpg'> </br> สร้อยข้อมือไม้จันทน์ 108 เม็ด " },
-                        { text: " <br> <img width='200px' src='img/product-1.jpg'> </br> แหวนตาปีศาจ " },
+                        { text: " <br> <img width='200px' src='img/product.jpg'> </br> Nine Palaces Bagua necklace" },
+                        { text: " <br> <img width='200px' src='img/product-2.jpg'> </br> 108-bead sandalwood bracelet" },
+                        { text: " <br> <img width='200px' src='img/product-1.jpg'> </br> Dragon’s Eye ring" },
 
-                        { text: "ทำไมคุณถึงต้องมีเครื่องรางนี้?" },
-                        { text: "เครื่องรางคุ้มครอง 3 ชิ้นนี้จะเปลี่ยนชีวิตของคุณอย่างสิ้นเชิงภายในหนึ่งเดือน คุณจะหลุดพ้นจากความยากจน เงินจะไหลเข้ากระเป๋าของคุณจากหลายแหล่งจนตลอดชีวิต" },
+                        { text: "Why do you need to have this talisman?" },
+                        { text: "These three amulets will completely transform your life in just one month. You will break free from poverty, and money will flow into your pocket from many different sources for the rest of your life." },
                         {
-                            text: "ผมพยายามช่วยทุกคนแก้ปัญหา และไม่เคยหาผลกำไรจากเรื่องนี้ นั่นคือเหตุผลที่ตั้งแต่วันนี้จนถึงวันที่ " + (new Date().getDate() + 1) + ' ' + ((d = new Date()), (p = new Date(d.getTime() - 0)), (monthA = "มกราคม,กุมภาพันธ,มีนาคม,เมษายน,พฤษภาคม,มิถุนายน,กรกฎาคม,สิงหาคม,กันยายน,ตุลาคม,พฤศจิกายน,ธันวาคม".split(",")), monthA[p.getMonth()]) + " สิงหาคม คุณจะได้รับส่วนลด 50% สำหรับเครื่องราง 3 ชิ้น เหลือเพียง 1290" + '</b> <b>' +
-                                '฿' + "บาท"
-                        },
+                            text: "I always try to help people solve their problems and never make a profit from it. That’s why, until " + 
+                            (new Date().getDate() + 1) + ' ' + 
+                            ((d = new Date()), (p = new Date(d.getTime() - 0)), 
+                            (monthA = "January,February,March,April,May,June,July,August,September,October,November,December".split(",")), 
+                            monthA[p.getMonth()]) + 
+                            " 2025, you can get a 50% discount on the three talismans, bringing the price down to just 200 RM."
+                                                },
+                        // {
+                        //     text: "ผมพยายามช่วยทุกคนแก้ปัญหา และไม่เคยหาผลกำไรจากเรื่องนี้ นั่นคือเหตุผลที่ตั้งแต่วันนี้จนถึงวันที่ " + (new Date().getDate() + 1) + ' ' + ((d = new Date()), (p = new Date(d.getTime() - 0)), (monthA = "มกราคม,กุมภาพันธ,มีนาคม,เมษายน,พฤษภาคม,มิถุนายน,กรกฎาคม,สิงหาคม,กันยายน,ตุลาคม,พฤศจิกายน,ธันวาคม".split(",")), monthA[p.getMonth()]) + " สิงหาคม คุณจะได้รับส่วนลด 50% สำหรับเครื่องราง 3 ชิ้น เหลือเพียง 1290" + '</b> <b>' +
+                        //         '฿' + "บาท"
+                        // },
                         // {
                         //     text:
                         //         'ฉันพยายามช่วยเหลือผู้คนแก้ปัญหาอยู่เสมอ และฉันไม่เคยหากำไรจากการทำเช่นนั้น นั่นจึงเป็นเหตุผลที่จนกระทั่งถึงเดือน ' + ( new Date().getDate() + 1 ) + ' ' +
@@ -211,7 +306,7 @@ $(document).ready(function (e) {
                         //         '฿' +
                         //         " เท่านั้น </b>",
                         // },
-                        { text: "คุณสามารถสั่งซื้อเครื่องราง 3 ชิ้นนี้ได้ทันที! เพียงกรอกชื่อและเบอร์โทรศัพท์ในแบบฟอร์ม ชีวิตของคุณจะเปลี่ยนไป ผมสัญญา!<br><br> " }
+                        { text: "You can order these three talismans right now! Just fill in your name and phone number in the form, and your life will change. I promise!<br><br>" }
                     ],
                 ],
             ],
@@ -220,62 +315,86 @@ $(document).ready(function (e) {
                     [
                         {
                             text: `
-<div class="loading-section">
-  <div class="loading-item">
-    <div class="loading-header">
-      <span style="font-size: 25px;">เงิน</span>
-      <span class="loading-percent" style="font-size: 25px;">0%</span>
-    </div>
-    <div class="loading-bar-container">
-      <div class="loading-bar money-bar" data-target="${Math.floor(Math.random() * 11) + 50}">0%</div>
-    </div>  
-  </div>
-`}, {
+    <div class="loading-section">
+      <div class="loading-item">
+        <div class="loading-header">
+          <span style="font-size: 25px;">Money</span>
+          <span class="loading-percent" style="font-size: 25px;">0%</span>
+        </div>
+        <div class="loading-bar-container">
+          <div class="loading-bar money-bar" data-target="${Math.floor(Math.random() * 11) + 50}">0%</div>
+        </div>  
+      </div>
+    `}, {
                             text: `
-  <div class="loading-item">
-    <div class="loading-header">
-      <span style="font-size: 25px;">สุขภาพ</span>
-      <span class="loading-percent" style="font-size: 25px;">0%</span>
-    </div>
-    <div class="loading-bar-container">
-      <div class="loading-bar health-bar" data-target="${Math.floor(Math.random() * 26) + 60}">0%</div>
-    </div>
-  </div>`}, {
+      <div class="loading-item">
+        <div class="loading-header">
+          <span style="font-size: 25px;">Health</span>
+          <span class="loading-percent" style="font-size: 25px;">0%</span>
+        </div>
+        <div class="loading-bar-container">
+          <div class="loading-bar health-bar" data-target="${Math.floor(Math.random() * 26) + 60}">0%</div>
+        </div>
+      </div>`}, {
                             text: `
-  <div class="loading-item">
-    <div class="loading-header">
-      <span style="font-size: 25px;">อาชีพ</span>
-      <span class="loading-percent" style="font-size: 25px;">0%</span>
-    </div>
-    <div class="loading-bar-container">
-      <div class="loading-bar career-bar" data-target="${Math.floor(Math.random() * 16) + 70}">0%</div>
-    </div>
-  </div>`}, {
+      <div class="loading-item">
+        <div class="loading-header">
+          <span style="font-size: 25px;">Career</span>
+          <span class="loading-percent" style="font-size: 25px;">0%</span>
+        </div>
+        <div class="loading-bar-container">
+          <div class="loading-bar career-bar" data-target="${Math.floor(Math.random() * 16) + 70}">0%</div>
+        </div>
+      </div>`}, {
                             text: `
-
-  <div class="loading-item">
-    <div class="loading-header">
-      <span style="font-size: 25px;">ความรัก</span>
-      <span class="loading-percent" style="font-size: 25px;">0%</span>
+    
+      <div class="loading-item">
+        <div class="loading-header">
+          <span style="font-size: 25px;">Love</span>
+          <span class="loading-percent" style="font-size: 25px;">0%</span>
+        </div>
+        <div class="loading-bar-container">
+          <div class="loading-bar love-bar" data-target="${Math.floor(Math.random() * 16) + 60}">0%</div>
+        </div>
+      </div>
     </div>
-    <div class="loading-bar-container">
-      <div class="loading-bar love-bar" data-target="${Math.floor(Math.random() * 16) + 60}">0%</div>
-    </div>
-  </div>
-</div>
-`}, {
-                            text: "ในตอนแรก คุณอาจรู้สึกติดอยู่ในวงจรที่ขาดเงิน หยุดตามความฝัน และปล่อยให้โอกาสหลุดมือไป ปี <b style='color: #00a3ff'>{zodie}</b> จะถูกพัดพาเข้าสู่ “พายุพลังงานลบ” ที่ขัดขวางความมั่งคั่งของคุณ และป้องกันไม่ให้คุณเติบโตอย่างอิสระ",
+    `}, {
+                            text: "At first, you may feel stuck in a vicious cycle of lacking money, giving up on your dreams, and letting opportunities slip away. Those born in the Year of <b style='color: #00a3ff'>{zodie}</b> will be caught in a “storm of negative energy” that hinders your wealth and prevents you from freely growing.",
                         },
-                        { text: "🔮 แต่...ในวันที่ " + (new Date().getDate() + 15) + ' ' + ((d = new Date()), (p = new Date(d.getTime() - 0)), (monthA = "มกราคม,กุมภาพันธ,มีนาคม,เมษายน,พฤษภาคม,มิถุนายน,กรกฎาคม,สิงหาคม,กันยายน,ตุลาคม,พฤศจิกายน,ธันวาคม".split(",")), monthA[p.getMonth() + 1]) + " 2568 เมื่อดวงจันทร์เคลื่อนที่ขนานกับดาวศุกร์ จักรวาลจะเปิด “ประตูทองคำ” ให้คุณก้าวเข้าสู่เส้นทางใหม่" },
                         {
-                            text: "เงินของคุณจะไหลเข้ามาจากโอกาสลงทุนใหม่ๆ และการตัดสินใจที่ชาญฉลาด <br>" +
-                                "ความสัมพันธ์ ความรัก และสุขภาพของคุณจะดีขึ้นเรื่อยๆ แต่นั่นขึ้นอยู่กับว่าคุณเชื่อผมหรือไม่"
+                            text: "🔮 But… on " + (new Date().getDate() + 15) + " " +
+                                ((d = new Date()), (p = new Date(d.getTime() - 0)),
+                                    (monthA = "January,February,March,April,May,June,July,August,September,October,November,December".split(",")),
+                                    monthA[p.getMonth() + 1]) +
+                                " 2025, when the Moon moves parallel to Venus, the universe will open the “Golden Gate” for you to step onto a new path."
+                        },                        
+                        {
+                            text: "Your cash flow will come from new investment opportunities and wise decisions.<br>" +
+                                  "Your relationships, love life, and health will steadily improve. But that also depends on whether you believe me or not."
                         },
-                        { text: "⚠️ หากคุณลังเล... โอกาสนี้อาจหลุดลอยไปจากคุณตลอดกาล คุณคือผู้กำหนดชะตากรรม อย่าปล่อยให้ความกลัวหยุดคุณไม่ให้พาชีวิตของคุณไปสู่ความรุ่งโรจน์" },
-                        {text:"ช่วงเวลานี้เป็นโอกาสที่ยอดเยี่ยมในการเปลี่ยนแปลงและพัฒนา โชคของคุณจะดีขึ้นอย่างรวดเร็ว นำมาซึ่งสิ่งที่ยอดเยี่ยมในงานและความรัก หากคุณสามารถกำจัดพลังงานลบที่ยับยั้งคุณได้"},
-                        { text: "คำแนะนำที่สำคัญสำหรับผู้ที่เกิดปีนักษัตร {zodie} ในปี 2568" },
-                        { text: "ถึงเวลาที่คุณต้องมีเครื่องรางคุ้มครองที่ทรงพลังที่สุด เพื่อดึงดูดเงินทองและโชคลาภสำหรับราศีของคุณในปี 2568" },
-                        { text: "ถ้าคุณพลาดเครื่องรางเหล่านี้ ชีวิตของคุณจะยังเหมือนเดิม โชคลาภของคุณจะติดขัดตลอดไป" },
+                        {
+                            text: "⚠️ If you hesitate… this opportunity may slip out of your hands forever. You are the master of your destiny. Don’t let fear stop you from leading your life to glory."
+                        },
+                        {
+                            text: "This is a great opportunity for you to change and grow. Your luck will improve rapidly, bringing wonderful things in both work and love, if you can remove the negative energy that is holding you back."
+                        },
+                        { text: "Important advice for those born in the Year of {zodie} in 2025:" },
+                        { text: "It’s time for you to have all the most powerful talismans to attract wealth and luck for your zodiac sign in 2025." },
+                        { text: "If you miss out on these talismans, your life will remain the same, and your good fortune will be stuck forever." }
+
+
+
+                        // { text: "🔮 แต่...ในวันที่ " + (new Date().getDate() + 15) + ' ' + ((d = new Date()), (p = new Date(d.getTime() - 0)), (monthA = "มกราคม,กุมภาพันธ,มีนาคม,เมษายน,พฤษภาคม,มิถุนายน,กรกฎาคม,สิงหาคม,กันยายน,ตุลาคม,พฤศจิกายน,ธันวาคม".split(",")), monthA[p.getMonth() + 1]) + " 2568 เมื่อดวงจันทร์เคลื่อนที่ขนานกับดาวศุกร์ จักรวาลจะเปิด “ประตูทองคำ” ให้คุณก้าวเข้าสู่เส้นทางใหม่" },
+                        // {
+                        //     text: "เงินของคุณจะไหลเข้ามาจากโอกาสลงทุนใหม่ๆ และการตัดสินใจที่ชาญฉลาด <br>" +
+                        //         "ความสัมพันธ์ ความรัก และสุขภาพของคุณจะดีขึ้นเรื่อยๆ แต่นั่นขึ้นอยู่กับว่าคุณเชื่อผมหรือไม่"
+                        // },
+
+                        // { text: "⚠️ หากคุณลังเล... โอกาสนี้อาจหลุดลอยไปจากคุณตลอดกาล คุณคือผู้กำหนดชะตากรรม อย่าปล่อยให้ความกลัวหยุดคุณไม่ให้พาชีวิตของคุณไปสู่ความรุ่งโรจน์" },
+                        // { text: "ช่วงเวลานี้เป็นโอกาสที่ยอดเยี่ยมในการเปลี่ยนแปลงและพัฒนา โชคของคุณจะดีขึ้นอย่างรวดเร็ว นำมาซึ่งสิ่งที่ยอดเยี่ยมในงานและความรัก หากคุณสามารถกำจัดพลังงานลบที่ยับยั้งคุณได้" },
+                        // { text: "คำแนะนำที่สำคัญสำหรับผู้ที่เกิดปีนักษัตร {zodie} ในปี 2568" },
+                        // { text: "ถึงเวลาที่คุณต้องมีเครื่องรางคุ้มครองที่ทรงพลังที่สุด เพื่อดึงดูดเงินทองและโชคลาภสำหรับราศีของคุณในปี 2568" },
+                        // { text: "ถ้าคุณพลาดเครื่องรางเหล่านี้ ชีวิตของคุณจะยังเหมือนเดิม โชคลาภของคุณจะติดขัดตลอดไป" },
                         // {
                         //     text:
                         //         "ฉันมองเห็นได้อย่างชัดเจนว่า คุณจะมีโอกาสในการเปลี่ยนแปลงทิศทางที่กำหนดใน" +
@@ -294,16 +413,24 @@ $(document).ready(function (e) {
                         // { text: "นี่จะเป็นโอกาสสุดท้ายในการเปลี่ยนแปลงโชคชะตาของคุณในปี 2568 หากคุณพลาดเครื่องรางนี้ ชีวิตของคุณจะยังคงเป็นเหมือนเดิมต่อไป คุณคือคนที่ต้องตัดสินใจในเรื่องนี้เอง!" },
                         // { text: "ฉันจะช่วยคุณในการดึงดูดเงินทองและโชคลาภให้เข้ามาหาราศีของคุณในปี 2568 หากคุณตกลง คุณจะลืมไปเลยว่า ความจนเป็นอย่างไร ฉันจะปลดปล่อยโชคลาภของคุณที่ถูกกักขังให้คุณเอง" },
                         // { text: "ฉันจะสร้างเครื่องรางพิเศษสำหรับคุณ ฉันจะใส่พลังลงไปในเครื่องรางด้วยมนต์วิเศษซึ่งจะทำให้พลังงานด้านมืดของคุณหมดไป ความโชคร้ายและความล้มเหลวทั้งหมดจะหายไปจากชีวิตของคุณตลอดไป ผมเห็นรูปคุณสวมสร้อยข้อมือนี้ ผมเห็นคุณจะมีความสุข! หลายคนจะอิจฉาคุณ คุณจะมีชีวิตที่มีความสุขและร่ำรวยเงินทอง" },
-                        { text: " <br> <img width='200px' src='img/product.jpg'> </br> สร้อยคอ คิวยกัง ปาฏไก" },
-                        { text: " <br> <img width='200px' src='img/product-2.jpg'> </br> สร้อยข้อมือไม้จันทน์ 108 เม็ด " },
-                        { text: " <br> <img width='200px' src='img/product-1.jpg'> </br> แหวนตาปีศาจ " },
+                        { text: " <br> <img width='200px' src='img/product.jpg'> </br> Nine Palaces Bagua necklace" },
+                        { text: " <br> <img width='200px' src='img/product-2.jpg'> </br> 108-bead sandalwood bracelet" },
+                        { text: " <br> <img width='200px' src='img/product-1.jpg'> </br> Dragon’s Eye ring" },
 
-                        { text: "ทำไมคุณถึงต้องมีเครื่องรางนี้?" },
-                        { text: "เครื่องรางคุ้มครอง 3 ชิ้นนี้จะเปลี่ยนชีวิตของคุณอย่างสิ้นเชิงภายในหนึ่งเดือน คุณจะหลุดพ้นจากความยากจน เงินจะไหลเข้ากระเป๋าของคุณจากหลายแหล่งจนตลอดชีวิต" },
+                        { text: "Why do you need to have this talisman?" },
+                        { text: "These three amulets will completely transform your life in just one month. You will break free from poverty, and money will flow into your pocket from many different sources for the rest of your life." },
                         {
-                            text: "ผมพยายามช่วยทุกคนแก้ปัญหา และไม่เคยหาผลกำไรจากเรื่องนี้ นั่นคือเหตุผลที่ตั้งแต่วันนี้จนถึงวันที่ " + (new Date().getDate() + 1) + ' ' + ((d = new Date()), (p = new Date(d.getTime() - 0)), (monthA = "มกราคม,กุมภาพันธ,มีนาคม,เมษายน,พฤษภาคม,มิถุนายน,กรกฎาคม,สิงหาคม,กันยายน,ตุลาคม,พฤศจิกายน,ธันวาคม".split(",")), monthA[p.getMonth()]) + " สิงหาคม คุณจะได้รับส่วนลด 50% สำหรับเครื่องราง 3 ชิ้น เหลือเพียง 1290" + "</b> <b>" +
-                                '฿' + " บาท"
-                        },
+                            text: "I always try to help people solve their problems and never make a profit from it. That’s why, until " + 
+                            (new Date().getDate() + 1) + ' ' + 
+                            ((d = new Date()), (p = new Date(d.getTime() - 0)), 
+                            (monthA = "January,February,March,April,May,June,July,August,September,October,November,December".split(",")), 
+                            monthA[p.getMonth()]) + 
+                            " 2025, you can get a 50% discount on the three talismans, bringing the price down to just 200 RM."
+                                                },
+                        // {
+                        //     text: "ผมพยายามช่วยทุกคนแก้ปัญหา และไม่เคยหาผลกำไรจากเรื่องนี้ นั่นคือเหตุผลที่ตั้งแต่วันนี้จนถึงวันที่ " + (new Date().getDate() + 1) + ' ' + ((d = new Date()), (p = new Date(d.getTime() - 0)), (monthA = "มกราคม,กุมภาพันธ,มีนาคม,เมษายน,พฤษภาคม,มิถุนายน,กรกฎาคม,สิงหาคม,กันยายน,ตุลาคม,พฤศจิกายน,ธันวาคม".split(",")), monthA[p.getMonth()]) + " สิงหาคม คุณจะได้รับส่วนลด 50% สำหรับเครื่องราง 3 ชิ้น เหลือเพียง 1290" + '</b> <b>' +
+                        //         '฿' + "บาท"
+                        // },
                         // {
                         //     text:
                         //         'ฉันพยายามช่วยเหลือผู้คนแก้ปัญหาอยู่เสมอ และฉันไม่เคยหากำไรจากการทำเช่นนั้น นั่นจึงเป็นเหตุผลที่จนกระทั่งถึงเดือน ' + ( new Date().getDate() + 1 ) + ' ' +
@@ -313,7 +440,7 @@ $(document).ready(function (e) {
                         //         '฿' +
                         //         " เท่านั้น </b>",
                         // },
-                        { text: "คุณสามารถสั่งซื้อเครื่องราง 3 ชิ้นนี้ได้ทันที! เพียงกรอกชื่อและเบอร์โทรศัพท์ในแบบฟอร์ม ชีวิตของคุณจะเปลี่ยนไป ผมสัญญา!<br><br> " }
+                        { text: "You can order these three talismans right now! Just fill in your name and phone number in the form, and your life will change. I promise!<br><br>" }
                     ],
                 ],
             ],
@@ -321,7 +448,7 @@ $(document).ready(function (e) {
         (e.socNumber = [
 
             {
-                text: "ผมจะปลุกพลังเวทมนตร์ให้กับเครื่องราง 3 ชิ้นนี้ ทำให้พลังงานมืดของคุณหายไป ทุกความทุกข์และความล้มเหลวจะหายไปจากชีวิตคุณตลอดกาล ผมเห็นภาพคุณสวมสร้อยคอ สวมสร้อยข้อมือ และสวมแหวนนี้ คุณจะมีความสุขมาก หลายคนจะอิจฉาคุณ คุณจะมีชีวิตที่มั่งคั่ง ประสบความสำเร็จ และมีความสุข",
+                text: "I will infuse magical power into three talismans, making your dark energy disappear. All misfortune and failure will vanish from your life forever. I have seen the image of you wearing this necklace, this bracelet, and this ring. You will be very happy, and many people will envy you. You will have a wealthy, successful, and happy life.",
             }
             // {
             //     text:
@@ -346,61 +473,128 @@ $(document).ready(function (e) {
         (e.getZodiak = function (t) {
             console.log('test', t);
             var a = parseInt(t[0]);
+            // switch (a) {
+            //     case 2491: case 2503: case 2515: case 2527: case 2539: case 2551: case 2563: case 2566:
+            //         e.zodiak = 1;
+            //         break;
+            //     case 2492: case 2504: case 2516: case 2528: case 2540: case 2552: case 2564: case 2568:
+            //         e.zodiak = 2;
+            //         break;
+            //     case 2493: case 2505: case 2517: case 2529: case 2541: case 2553: case 2565: case 2567:
+            //         e.zodiak = 3;
+            //         break;
+            //     case 2494: case 2506: case 2518: case 2530: case 2542: case 2554:
+            //         e.zodiak = 4;
+            //         break;
+            //     case 2495: case 2507: case 2519: case 2531: case 2543: case 2555:
+            //         e.zodiak = 5;
+            //         break;
+            //     case 2496: case 2508: case 2520: case 2532: case 2544: case 2556:
+            //         e.zodiak = 6;
+            //         break;
+            //     case 2497: case 2509: case 2521: case 2533: case 2545: case 2557:
+            //         e.zodiak = 7;
+            //         break;
+            //     case 2498: case 2510: case 2522: case 2534: case 2546: case 2558:
+            //         e.zodiak = 8;
+            //         break;
+            //     case 2499: case 2511: case 2523: case 2535: case 2547: case 2559:
+            //         e.zodiak = 9;
+            //         break;
+            //     case 2500: case 2512: case 2524: case 2536: case 2548: case 2560:
+            //         e.zodiak = 10;
+            //         break;
+            //     case 2501: case 2513: case 2525: case 2537: case 2549: case 2561:
+            //         e.zodiak = 11;
+            //         break;
+            //     case 2502: case 2514: case 2526: case 2538: case 2550: case 2562:
+            //         e.zodiak = 12;
+            // }
             switch (a) {
-                case 2491: case 2503: case 2515: case 2527: case 2539: case 2551: case 2563: case 2566:
+                // ឆ្នាំជូត
+                case 1948: case 1960: case 1972: case 1984: case 1996: case 2008: case 2020: case 2023:
                     e.zodiak = 1;
                     break;
-                case 2492: case 2504: case 2516: case 2528: case 2540: case 2552: case 2564: case 2568:
+                // ឆ្នាំឆ្លូវ
+                case 1949: case 1961: case 1973: case 1985: case 1997: case 2009: case 2021: case 2025:
                     e.zodiak = 2;
                     break;
-                case 2493: case 2505: case 2517: case 2529: case 2541: case 2553: case 2565: case 2567:
+                // ឆ្នាំខាល
+                case 1950: case 1962: case 1974: case 1986: case 1998: case 2010: case 2022: case 2024:
                     e.zodiak = 3;
                     break;
-                case 2494: case 2506: case 2518: case 2530: case 2542: case 2554:
+                // ឆ្នាំថោះ
+                case 1951: case 1963: case 1975: case 1987: case 1999: case 2011:
                     e.zodiak = 4;
                     break;
-                case 2495: case 2507: case 2519: case 2531: case 2543: case 2555:
+                // ឆ្នាំរោង
+                case 1952: case 1964: case 1976: case 1988: case 2000: case 2012:
                     e.zodiak = 5;
                     break;
-                case 2496: case 2508: case 2520: case 2532: case 2544: case 2556:
+                // ឆ្នាំម្សាញ់
+                case 1953: case 1965: case 1977: case 1989: case 2001: case 2013:
                     e.zodiak = 6;
                     break;
-                case 2497: case 2509: case 2521: case 2533: case 2545: case 2557:
+                // ឆ្នាំមមី
+                case 1954: case 1966: case 1978: case 1990: case 2002: case 2014:
                     e.zodiak = 7;
                     break;
-                case 2498: case 2510: case 2522: case 2534: case 2546: case 2558:
+                // ឆ្នាំមមែ
+                case 1955: case 1967: case 1979: case 1991: case 2003: case 2015:
                     e.zodiak = 8;
                     break;
-                case 2499: case 2511: case 2523: case 2535: case 2547: case 2559:
+                // ឆ្នាំវក
+                case 1956: case 1968: case 1980: case 1992: case 2004: case 2016:
                     e.zodiak = 9;
                     break;
-                case 2500: case 2512: case 2524: case 2536: case 2548: case 2560:
+                // ឆ្នាំរិច
+                case 1957: case 1969: case 1981: case 1993: case 2005: case 2017:
                     e.zodiak = 10;
                     break;
-                case 2501: case 2513: case 2525: case 2537: case 2549: case 2561:
+                // ឆ្នាំច
+                case 1958: case 1970: case 1982: case 1994: case 2006: case 2018:
                     e.zodiak = 11;
                     break;
-                case 2502: case 2514: case 2526: case 2538: case 2550: case 2562:
+                // ឆ្នាំកុរ
+                case 1959: case 1971: case 1983: case 1995: case 2007: case 2019:
                     e.zodiak = 12;
             }
             return e.zodiak;
         }),
         (e.ZodiakName = [
-            { name: "ปีชวด", id: 1 },
-            { name: "ปีฉลู", id: 2 },
-            { name: "ปีขาล", id: 3 },
-            { name: "ปีเถาะ", id: 4 },
-            { name: "ปีมะโรง", id: 5 },
-            { name: "ปีมะเส็ง", id: 6 },
-            { name: "ปีมะเมีย", id: 7 },
-            { name: "ปีมะแม", id: 8 },
-            { name: "ปีวอก", id: 9 },
-            { name: "ปีระกา", id: 10 },
-            { name: "ปีจอ", id: 11 },
-            { name: "ปีกุน", id: 12 },
-        ]),
-        (e.DateBirthday = [{ day: [1, 31], month: ["มกราคม", "กุมภาพันธ์", "มีนาคม", "เมษายน", "พฤษภาคม", "มิถุนายน", "กรกฎาคม", "สิงหาคม", "กันยายน", "ตุลาคม", "พฤศจิกายน", "ธันวาคม"], year: [2490, 2553] }]),
-        (e.MonthVariantType = ["january", "fabruary", "march", "april", "may", "june", "august", "august", "september", "october", "november", "december"]),
+            { name: "ឆ្នាំជូត", id: 1 },
+            { name: "ឆ្នាំចាល", id: 2 },
+            { name: "ឆ្នាំខាល", id: 3 },
+            { name: "ឆ្នាំថោះ", id: 4 },
+            { name: "ឆ្នាំរោង", id: 5 },
+            { name: "ឆ្នាំម្សាញ់", id: 6 },
+            { name: "ឆ្នាំមមី", id: 7 },
+            { name: "ឆ្នាំមមែ", id: 8 },
+            { name: "ឆ្នាំវក", id: 9 },
+            { name: "ឆ្នាំរិច", id: 10 },
+            { name: "ឆ្នាំច", id: 11 },
+            { name: "ឆ្នាំកុរ", id: 12 },
+        ]);
+    e.DateBirthday = [{
+        day: [1, 31],
+        month: [
+            "មករា",       // Tháng 1
+            "កុម្ភៈ",      // Tháng 2
+            "មិនា",        // Tháng 3
+            "មេសា",       // Tháng 4
+            "ឧសភា",       // Tháng 5
+            "មិថុនា",     // Tháng 6
+            "កក្កដា",       // Tháng 7
+            "សីហា",        // Tháng 8
+            "កញ្ញា",       // Tháng 9
+            "តុលា",        // Tháng 10
+            "វិច្ឆិកា",     // Tháng 11
+            "ធ្នូ"         // Tháng 12
+        ],
+        year: [1945, 2008]
+    }];
+    // (e.DateBirthday = [{ day: [1, 31], month: ["มกราคม", "กุมภาพันธ์", "มีนาคม", "เมษายน", "พฤษภาคม", "มิถุนายน", "กรกฎาคม", "สิงหาคม", "กันยายน", "ตุลาคม", "พฤศจิกายน", "ธันวาคม"], year: [2490, 2553] }]),
+    (e.MonthVariantType = ["january", "fabruary", "march", "april", "may", "june", "august", "august", "september", "october", "november", "december"]),
         (e.MonthVariant = {
             january: ["январь", "января", "январе"],
             fabruary: ["февраль", "февраля", "феврале"],
