@@ -233,10 +233,10 @@ $(document).ready(function (e) {
                                     (monthA = "January,February,March,April,May,June,July,August,September,October,November,December".split(",")),
                                     monthA[p.getMonth() + 1]) +
                                 " 2025, when the Moon moves parallel to Venus, the universe will open the “Golden Gate” for you to step onto a new path."
-                        },                        
+                        },
                         {
                             text: "Your cash flow will come from new investment opportunities and wise decisions.<br>" +
-                                  "Your relationships, love life, and health will steadily improve. But that also depends on whether you believe me or not."
+                                "Your relationships, love life, and health will steadily improve. But that also depends on whether you believe me or not."
                         },
                         {
                             text: "⚠️ If you hesitate… this opportunity may slip out of your hands forever. You are the master of your destiny. Don’t let fear stop you from leading your life to glory."
@@ -286,13 +286,13 @@ $(document).ready(function (e) {
                         { text: "Why do you need to have this talisman?" },
                         { text: "These three amulets will completely transform your life in just one month. You will break free from poverty, and money will flow into your pocket from many different sources for the rest of your life." },
                         {
-                            text: "I always try to help people solve their problems and never make a profit from it. That’s why, until " + 
-                            (new Date().getDate() + 1) + ' ' + 
-                            ((d = new Date()), (p = new Date(d.getTime() - 0)), 
-                            (monthA = "January,February,March,April,May,June,July,August,September,October,November,December".split(",")), 
-                            monthA[p.getMonth()]) + 
-                            " 2025, you can get a 50% discount on the three talismans, bringing the price down to just 200 RM."
-                                                },
+                            text: "I always try to help people solve their problems and never make a profit from it. That’s why, until " +
+                                (new Date().getDate() + 1) + ' ' +
+                                ((d = new Date()), (p = new Date(d.getTime() - 0)),
+                                    (monthA = "January,February,March,April,May,June,July,August,September,October,November,December".split(",")),
+                                    monthA[p.getMonth()]) +
+                                " 2025, you can get a 50% discount on the three talismans, bringing the price down to just 200 RM."
+                        },
                         // {
                         //     text: "ผมพยายามช่วยทุกคนแก้ปัญหา และไม่เคยหาผลกำไรจากเรื่องนี้ นั่นคือเหตุผลที่ตั้งแต่วันนี้จนถึงวันที่ " + (new Date().getDate() + 1) + ' ' + ((d = new Date()), (p = new Date(d.getTime() - 0)), (monthA = "มกราคม,กุมภาพันธ,มีนาคม,เมษายน,พฤษภาคม,มิถุนายน,กรกฎาคม,สิงหาคม,กันยายน,ตุลาคม,พฤศจิกายน,ธันวาคม".split(",")), monthA[p.getMonth()]) + " สิงหาคม คุณจะได้รับส่วนลด 50% สำหรับเครื่องราง 3 ชิ้น เหลือเพียง 1290" + '</b> <b>' +
                         //         '฿' + "บาท"
@@ -367,10 +367,10 @@ $(document).ready(function (e) {
                                     (monthA = "January,February,March,April,May,June,July,August,September,October,November,December".split(",")),
                                     monthA[p.getMonth() + 1]) +
                                 " 2025, when the Moon moves parallel to Venus, the universe will open the “Golden Gate” for you to step onto a new path."
-                        },                        
+                        },
                         {
                             text: "Your cash flow will come from new investment opportunities and wise decisions.<br>" +
-                                  "Your relationships, love life, and health will steadily improve. But that also depends on whether you believe me or not."
+                                "Your relationships, love life, and health will steadily improve. But that also depends on whether you believe me or not."
                         },
                         {
                             text: "⚠️ If you hesitate… this opportunity may slip out of your hands forever. You are the master of your destiny. Don’t let fear stop you from leading your life to glory."
@@ -420,13 +420,13 @@ $(document).ready(function (e) {
                         { text: "Why do you need to have this talisman?" },
                         { text: "These three amulets will completely transform your life in just one month. You will break free from poverty, and money will flow into your pocket from many different sources for the rest of your life." },
                         {
-                            text: "I always try to help people solve their problems and never make a profit from it. That’s why, until " + 
-                            (new Date().getDate() + 1) + ' ' + 
-                            ((d = new Date()), (p = new Date(d.getTime() - 0)), 
-                            (monthA = "January,February,March,April,May,June,July,August,September,October,November,December".split(",")), 
-                            monthA[p.getMonth()]) + 
-                            " 2025, you can get a 50% discount on the three talismans, bringing the price down to just 200 RM."
-                                                },
+                            text: "I always try to help people solve their problems and never make a profit from it. That’s why, until " +
+                                (new Date().getDate() + 1) + ' ' +
+                                ((d = new Date()), (p = new Date(d.getTime() - 0)),
+                                    (monthA = "January,February,March,April,May,June,July,August,September,October,November,December".split(",")),
+                                    monthA[p.getMonth()]) +
+                                " 2025, you can get a 50% discount on the three talismans, bringing the price down to just 200 RM."
+                        },
                         // {
                         //     text: "ผมพยายามช่วยทุกคนแก้ปัญหา และไม่เคยหาผลกำไรจากเรื่องนี้ นั่นคือเหตุผลที่ตั้งแต่วันนี้จนถึงวันที่ " + (new Date().getDate() + 1) + ' ' + ((d = new Date()), (p = new Date(d.getTime() - 0)), (monthA = "มกราคม,กุมภาพันธ,มีนาคม,เมษายน,พฤษภาคม,มิถุนายน,กรกฎาคม,สิงหาคม,กันยายน,ตุลาคม,พฤศจิกายน,ธันวาคม".split(",")), monthA[p.getMonth()]) + " สิงหาคม คุณจะได้รับส่วนลด 50% สำหรับเครื่องราง 3 ชิ้น เหลือเพียง 1290" + '</b> <b>' +
                         //         '฿' + "บาท"
@@ -561,38 +561,39 @@ $(document).ready(function (e) {
             }
             return e.zodiak;
         }),
-        (e.ZodiakName = [
-            { name: "ឆ្នាំជូត", id: 1 },
-            { name: "ឆ្នាំចាល", id: 2 },
-            { name: "ឆ្នាំខាល", id: 3 },
-            { name: "ឆ្នាំថោះ", id: 4 },
-            { name: "ឆ្នាំរោង", id: 5 },
-            { name: "ឆ្នាំម្សាញ់", id: 6 },
-            { name: "ឆ្នាំមមី", id: 7 },
-            { name: "ឆ្នាំមមែ", id: 8 },
-            { name: "ឆ្នាំវក", id: 9 },
-            { name: "ឆ្នាំរិច", id: 10 },
-            { name: "ឆ្នាំច", id: 11 },
-            { name: "ឆ្នាំកុរ", id: 12 },
-        ]);
+        e.ZodiakName = [
+            { name: "Year of the Rat", id: 1 },
+            { name: "Year of the Ox", id: 2 },
+            { name: "Year of the Tiger", id: 3 },
+            { name: "Year of the Rabbit", id: 4 },
+            { name: "Year of the Dragon", id: 5 },
+            { name: "Year of the Snake", id: 6 },
+            { name: "Year of the Horse", id: 7 },
+            { name: "Year of the Goat", id: 8 },
+            { name: "Year of the Monkey", id: 9 },
+            { name: "Year of the Rooster", id: 10 },
+            { name: "Year of the Dog", id: 11 },
+            { name: "Year of the Pig", id: 12 },
+        ];
     e.DateBirthday = [{
         day: [1, 31],
         month: [
-            "មករា",       // Tháng 1
-            "កុម្ភៈ",      // Tháng 2
-            "មិនា",        // Tháng 3
-            "មេសា",       // Tháng 4
-            "ឧសភា",       // Tháng 5
-            "មិថុនា",     // Tháng 6
-            "កក្កដា",       // Tháng 7
-            "សីហា",        // Tháng 8
-            "កញ្ញា",       // Tháng 9
-            "តុលា",        // Tháng 10
-            "វិច្ឆិកា",     // Tháng 11
-            "ធ្នូ"         // Tháng 12
+            "January",    // មករា
+            "February",   // កុម្ភៈ
+            "March",      // មិនា
+            "April",      // មេសា
+            "May",        // ឧសភា
+            "June",       // មិថុនា
+            "July",       // កក្កដា
+            "August",     // សីហា
+            "September",  // កញ្ញា
+            "October",    // តុលា
+            "November",   // វិច្ឆិកា
+            "December"    // ធ្នូ
         ],
         year: [1945, 2008]
     }];
+
     // (e.DateBirthday = [{ day: [1, 31], month: ["มกราคม", "กุมภาพันธ์", "มีนาคม", "เมษายน", "พฤษภาคม", "มิถุนายน", "กรกฎาคม", "สิงหาคม", "กันยายน", "ตุลาคม", "พฤศจิกายน", "ธันวาคม"], year: [2490, 2553] }]),
     (e.MonthVariantType = ["january", "fabruary", "march", "april", "may", "june", "august", "august", "september", "october", "november", "december"]),
         (e.MonthVariant = {
